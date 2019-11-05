@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Lonely Snippets on The Lonely Man of Data</title>
+    <link>/series/lonely-snippets/</link>
+    <description>Recent content in Lonely Snippets on The Lonely Man of Data</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 10 Sep 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/series/lonely-snippets/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How do you Get Steve Smith out?</title>
+      <link>/posts/getting-steve-smith-out/</link>
+      <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/getting-steve-smith-out/</guid>
+      <description>Steve Smith was a thorn in England’s side over the summer in the Ashes series and, regardless of his past transgressions, has surely cemented his legacy as one of the finest test batsmen of all time.
+England though, didn’t help themselves. Their main tactic was to bombard Smith with bouncers to create a hostile batting condition. Smith was so disciplined however, seldom taking the bait and leaving anything high and wide.</description>
+    </item>
+    
+    <item>
+      <title>How Many People Regret Naming Their Child After Daenerys Targaryen?</title>
+      <link>/posts/dany-names/</link>
+      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/dany-names/</guid>
+      <description>And now the rains weep o’er their halls with not a soul to hear— Rains of Castamere - Seemingly every musician in Westeros
+ After S8E5 of Game of Thrones, someone on Reddit pondered about how many people who named their children after Daenerys Targaryen subsequently regret that decision after she turned heel and destroyed King’s Landing ina fiery rage. A very valid question. Thankfully, the R package babynames has data from the US census that might help us quantify this a bit.</description>
+    </item>
+    
+  </channel>
+</rss>

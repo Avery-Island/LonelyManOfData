@@ -1,0 +1,67 @@
+---
+title: "In the Aeroplane Over the Sea - 20 Years On"
+#author: "Mike Tapp <michael.tapp@sharecreative.com>"
+date: "2019-10-07"
+series:
+- Theme
+- Hugo
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(lubridate)
+library(jsonlite)
+library(dplyr)
+library(stringr)
+library(tidytext)
+library(genius)
+
+
+id <- "Vt1HzmyEXM3LTYLCVjdRsqfMeY9RQk7_HbV23mA2lO9Ljb8cpztOumE_Re4W6DWU"
+secret <- "_0vi6DSlLAhdCHStPP3Omq1_0-_Xihvw4xCMR3R1oSy-_j9GeqKZPOuaZzH6hgql7pLT26I5MNjeNPZDA-qubQ"
+
+
+
+```
+
+> "I know that she will live forever. She wont ever die --- *Ghost - Neutral Milk Hotel*"
+
+To mark the twentieth anniversary of one of the most influential albums of all time, I thought I'd explore the sentiment of the crptyic and ethereal lyrics of Jeff Mangum.
+
+```{r data call}
+nmh_data <- genius_album(artist = "Neutral Milk Hotel", album = "In the Aeroplane Over the Sea")
+nmh_tidy_words <- nmh_data %>% 
+  unnest_tokens(word, lyric)
+```
+
+Bind the sentiment
+
+```{r bind sentiment}
+
+nmh_sentiment <- nmh_tidy_words %>%
+  inner_join(get_sentiments("bing")) %>%
+  count(track_title, index = line, sentiment) %>%
+  tidyr::spread(sentiment, n, fill = 0) %>%
+  mutate(sentiment = positive - negative)
+```
+
+Plot over the course of the album
+
+```{r plot}
+library(ggthemes)
+library(ggplot2)
+ggplot(nmh_sentiment, aes(index, sentiment, fill = track_title)) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~track_title, ncol = 2, scales = "free_x") +
+  theme_minimal() +
+  labs(title = "Sentiment by Line of each track from Sun Kil Moon's album 'Benji'",
+                caption = "Bing sentiment binded to lyrics scraped from Genius",
+                x = "line number",
+                y = "sentiment") +
+  theme(text = element_text(family="Arial", size=12),
+        strip.background = element_rect(colour = "#F4F4F4", fill = "#F4F4F4"),
+        strip.text.x = element_text(colour = "grey50", face = "bold"))+
+  scale_fill_ptol()
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

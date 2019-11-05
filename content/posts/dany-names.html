@@ -1,0 +1,40 @@
+---
+title: "How Many People Regret Naming Their Child After Daenerys Targaryen?"
+#author: "Mike Tapp <michael.tapp@sharecreative.com>"
+date: "2019-05-13"
+series:
+- Lonely Snippets
+output: html_document
+---
+
+
+
+<blockquote>
+<p><strong>And now the rains weep o’er their halls with not a soul to hear</strong>— <em>Rains of Castamere - Seemingly every musician in Westeros</em></p>
+</blockquote>
+<p>After S8E5 of Game of Thrones, someone on Reddit pondered about how many people who named their children after Daenerys Targaryen subsequently regret that decision after she turned heel and destroyed King’s Landing ina fiery rage. A very valid question. Thankfully, the R package <code>babynames</code> has data from the US census that might help us quantify this a bit.</p>
+<pre class="r"><code>dany_df &lt;- babynames_df  %&gt;% 
+  dplyr::filter(name == &quot;Dany&quot; | name == &quot;Daenerys&quot; | name == &quot;Khaleesi&quot;)</code></pre>
+<p>I think it’s helpful to look at a few variations - the full name ‘Daenerys’, her title ‘Khaleesi’, and the shortened ‘Dany’, and with the later being a name prior to the phenomenon of Game of Thrones, looking at the name volumes over time might also give us some insight as to how much cultural impact the show really had.</p>
+<pre class="r"><code>babynames_df %&gt;% 
+  dplyr::filter(name == &quot;Dany&quot; | name == &quot;Daenerys&quot; | name == &quot;Khaleesi&quot;) %&gt;% 
+  ggplot(aes(year, n, colour = name)) +
+  geom_line(size = 1.2) +
+  facet_grid(~name) +
+  theme_minimal() +
+  scale_colour_ptol() +
+  ggplot2::labs(title = &quot;Number of people regretting naming their child after Daenerys&quot;,
+                x = &quot;Year&quot;, 
+                y = &quot;n&quot;,
+                caption = &quot;US Census data from the &#39;babynames&#39; R package - LonelyManOfData&quot;) +
+  ggplot2::theme_minimal() +
+  ggplot2::theme(legend.position = &quot;none&quot;,
+                 axis.title.y = ggplot2::element_text(size = 13, angle = 0, vjust = 0.5),
+                 axis.title.x = ggplot2::element_text(size = 13),
+                 axis.text.y = ggplot2::element_text(size = 10),
+                 axis.text.x = ggplot2::element_text(size = 10),
+                  plot.background = element_rect(colour = &quot;#FAFAFA&quot;, fill = &quot;#FAFAFA&quot;),
+                  panel.background = element_rect(colour = &quot;#FAFAFA&quot;, fill = &quot;#FAFAFA&quot;),
+                 text = element_text(family=&quot;Arial&quot;, face=&quot;bold&quot;, size=12))</code></pre>
+<p><img src="/posts/dany-names_files/figure-html/plot-1.png" width="672" /></p>
+<p>This is genuienly more than I imagined. Poor kids. I guess the lesson here is don’t name your child after a TV show charachter until the show has completely finished.</p>

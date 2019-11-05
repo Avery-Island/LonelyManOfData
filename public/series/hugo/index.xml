@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on The Lonely Man of Data</title>
+    <link>/series/hugo/</link>
+    <description>Recent content in Hugo on The Lonely Man of Data</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 07 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/series/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>In the Aeroplane Over the Sea - 20 Years On</title>
+      <link>/posts/in-the-aeroplane/</link>
+      <pubDate>Mon, 07 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/in-the-aeroplane/</guid>
+      <description>“I know that she will live forever. She wont ever die — Ghost - Neutral Milk Hotel”
+ To mark the twentieth anniversary of one of the most influential albums of all time, I thought I’d explore the sentiment of the crptyic and ethereal lyrics of Jeff Mangum.
+nmh_data &amp;lt;- genius_album(artist = &amp;quot;Neutral Milk Hotel&amp;quot;, album = &amp;quot;In the Aeroplane Over the Sea&amp;quot;) ## Joining, by = c(&amp;quot;track_title&amp;quot;, &amp;quot;track_n&amp;quot;, &amp;quot;track_url&amp;quot;) nmh_tidy_words &amp;lt;- nmh_data %&amp;gt;% unnest_tokens(word, lyric) Bind the sentiment</description>
+    </item>
+    
+    <item>
+      <title>Theme Demo</title>
+      <link>/posts/theme-demo/</link>
+      <pubDate>Sun, 08 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/theme-demo/</guid>
+      <description>Style Demo h1 Heading h2 Heading h3 Heading h4 Heading h5 Heading h6 Heading This is bold text
+This is bold text
+This is italic text
+This is italic text
+Deleted text
+This is text with inline math $\sum_{n=1}^{\infty} 2^{-n} = 1$ and with math blocks:
+$$ \sum_{n=1}^{\infty} 2^{-n} = 1 $$
+   Heading Another heading     text text   text text   text text     Block quotes are written like so.</description>
+    </item>
+    
+  </channel>
+</rss>

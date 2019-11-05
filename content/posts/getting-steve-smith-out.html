@@ -1,0 +1,40 @@
+---
+title: "How do you Get Steve Smith out?"
+#author: "Mike Tapp <michael.tapp@sharecreative.com>"
+date: "2019-09-10"
+series:
+- Lonely Snippets
+output: html_document
+---
+
+
+
+<p>Steve Smith was a thorn in England’s side over the summer in the Ashes series and, regardless of his past transgressions, has surely cemented his legacy as one of the finest test batsmen of all time.</p>
+<p>England though, didn’t help themselves. Their main tactic was to bombard Smith with bouncers to create a hostile batting condition. Smith was so disciplined however, seldom taking the bait and leaving anything high and wide. Just before the final test, I did a quick analysis to try and see if there were any trends in ‘cheap’ Smith dismissals versus different opponents…</p>
+<p>The <code>cricketR</code> package provides an API wrapper to ESPN’s fantastic Cricinfo database. You can see how it works in the snippet below. By getting the player ID number from their Cricinfo profile (in this case Steve Smith is <code>267192</code>), you can pass that through the <code>getPlayerData</code> function to pull the player’s batting or bowling records.</p>
+<pre class="r"><code>smith &lt;- getPlayerData(267192, type = &quot;batting&quot;)
+table(smith$Dismissal)</code></pre>
+<pre><code>## 
+##       -  bowled  caught     lbw not out run out stumped 
+##       5      20      57      16      16       3       4</code></pre>
+<pre class="r"><code>smith %&gt;% 
+  filter(Dismissal != &quot;-&quot;) %&gt;% 
+  ggplot(aes(Dismissal, as.numeric(Runs))) +
+  geom_boxplot(aes(colour = Dismissal)) +
+  facet_wrap(~Opposition) +
+  theme_minimal() +
+  labs(title = &quot;How do you get Steve Smith out?&quot;,
+       subtitle = &quot;England have dimsissed him cheapest when caught&quot;,
+       caption = &quot;Data from the ESPN Crickinfo API - LonelyManOfData&quot;,
+       x = &quot;Dismissal&quot;,
+       y = &quot;Runs Scored&quot;) +
+  theme(text = element_text(family=&quot;Arial&quot;, size=12, face = &quot;bold&quot;),
+        #legend.position=&quot;none&quot;,
+        plot.background = element_rect(colour = &quot;#FAFAFA&quot;, fill = &quot;#FAFAFA&quot;),
+        panel.background = element_rect(colour = &quot;#FAFAFA&quot;, fill = &quot;#FAFAFA&quot;),
+        axis.text.x=element_blank(),
+        strip.background = element_rect(colour = &quot;#FAFAFA&quot;, fill = &quot;#FAFAFA&quot;),
+        strip.text.x = element_text(colour = &quot;grey50&quot;, face = &quot;bold&quot;))+
+  scale_colour_ptol()</code></pre>
+<p><img src="/posts/getting-steve-smith-out_files/figure-html/plot-1.png" width="672" /></p>
+<p>I posted this to LinkedIn suggesting England shift focus to getting Smith caught behind / at slip as v England, Smith’s scores were in the mid twenties when getting caught ut. Low and behold in the second innings, the scorecard would read <strong>Smith b Broad c Stokes 23</strong> - just saying.</p>

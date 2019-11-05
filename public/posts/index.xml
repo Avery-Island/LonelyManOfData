@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on The Lonely Man of Data</title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on The Lonely Man of Data</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 07 Oct 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>In the Aeroplane Over the Sea - 20 Years On</title>
+      <link>/posts/in-the-aeroplane/</link>
+      <pubDate>Mon, 07 Oct 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/in-the-aeroplane/</guid>
+      <description>“I know that she will live forever. She wont ever die — Ghost - Neutral Milk Hotel”
+ To mark the twentieth anniversary of one of the most influential albums of all time, I thought I’d explore the sentiment of the crptyic and ethereal lyrics of Jeff Mangum.
+nmh_data &amp;lt;- genius_album(artist = &amp;quot;Neutral Milk Hotel&amp;quot;, album = &amp;quot;In the Aeroplane Over the Sea&amp;quot;) ## Joining, by = c(&amp;quot;track_title&amp;quot;, &amp;quot;track_n&amp;quot;, &amp;quot;track_url&amp;quot;) nmh_tidy_words &amp;lt;- nmh_data %&amp;gt;% unnest_tokens(word, lyric) Bind the sentiment</description>
+    </item>
+    
+    <item>
+      <title>How do you Get Steve Smith out?</title>
+      <link>/posts/getting-steve-smith-out/</link>
+      <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/getting-steve-smith-out/</guid>
+      <description>Steve Smith was a thorn in England’s side over the summer in the Ashes series and, regardless of his past transgressions, has surely cemented his legacy as one of the finest test batsmen of all time.
+England though, didn’t help themselves. Their main tactic was to bombard Smith with bouncers to create a hostile batting condition. Smith was so disciplined however, seldom taking the bait and leaving anything high and wide.</description>
+    </item>
+    
+    <item>
+      <title>How Many People Regret Naming Their Child After Daenerys Targaryen?</title>
+      <link>/posts/dany-names/</link>
+      <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/dany-names/</guid>
+      <description>And now the rains weep o’er their halls with not a soul to hear— Rains of Castamere - Seemingly every musician in Westeros
+ After S8E5 of Game of Thrones, someone on Reddit pondered about how many people who named their children after Daenerys Targaryen subsequently regret that decision after she turned heel and destroyed King’s Landing ina fiery rage. A very valid question. Thankfully, the R package babynames has data from the US census that might help us quantify this a bit.</description>
+    </item>
+    
+    <item>
+      <title>Dummy</title>
+      <link>/posts/dummy/</link>
+      <pubDate>Mon, 31 Dec 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/dummy/</guid>
+      <description>Nada para ver aqui!</description>
+    </item>
+    
+    <item>
+      <title>Theme Demo</title>
+      <link>/posts/theme-demo/</link>
+      <pubDate>Sun, 08 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/theme-demo/</guid>
+      <description>Style Demo h1 Heading h2 Heading h3 Heading h4 Heading h5 Heading h6 Heading This is bold text
+This is bold text
+This is italic text
+This is italic text
+Deleted text
+This is text with inline math $\sum_{n=1}^{\infty} 2^{-n} = 1$ and with math blocks:
+$$ \sum_{n=1}^{\infty} 2^{-n} = 1 $$
+   Heading Another heading     text text   text text   text text     Block quotes are written like so.</description>
+    </item>
+    
+  </channel>
+</rss>
