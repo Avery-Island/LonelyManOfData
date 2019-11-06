@@ -1,0 +1,75 @@
+---
+title: "Using the UNDERTALE Soundtrack to Characterise Sans and Papyrus"
+#author: "Mike Tapp <michael.tapp@sharecreative.com>"
+date: "2019-11-06"
+series:
+- Lonely Snippets
+output: html_document
+---
+
+> **_Knowing that the data scientist might one day write succinct code. It fills you with determination_**
+
+```{r setup, include=FALSE}
+# libraries and dependencies ----
+library(spotifyr)
+library(tidyverse)
+library(ggthemes)
+
+
+# Proving we are authorised to access the API -----
+Sys.setenv(SPOTIFY_CLIENT_ID = 'bd25292854184db3b04fdef94b27d7f5')
+Sys.setenv(SPOTIFY_CLIENT_SECRET = '64d6bfb494e14750807dcfaf0af423aa')
+
+access_token <- get_spotify_access_token()
+```
+
+
+UNDERTALE has become a cult classic video game. It has been critically acclaimed for its storytelling, meta commentary, and for treading the line between comedy and empathy. For me, what pulls it all together is the soundtrack. This too has been widely praised and tracks like _"Ruins"_ and _"MEGALOVANIA"_ have spread to become part of wider culture - notably [Kenny Omega](https://www.youtube.com/watch?v=QNefRCxIQRU) came to the ring in AEW to _"MEGALOVANIA"_ dressed as the character Sans.
+
+It's by using Sans and his borther Papyrus that I hope to demonstrate both how the soundtrack is helps build and flesh out their characters, and how cool the Spotify API is by using it to pull audio features for their respective theme tracks.
+
+*__NOTE - This article is spoiler free, so feel free to read on if you haven't played UNDERTALE. I would recommend you do give it a go though as it is excellent.__*
+
+
+### Brotherly L O V E
+
+In the game, Sans and Papyrus contrast with each other in term of how their ambitions manifest. Papyrus' desire to join the Royal Guard manifests in his overly flambouyant and brash, but ultimately optimistic and trusting personality. Sans is the opposite.  He is laid back to the point laziness which manifests in his apathetic personality. Their theme tracks, _"Sans."_ and _"Nyeh Heh Heh!"_, help cement these personality traits. _"Sans."_ is a plodding bass led number and _"Nyeh Heh Heh!"_ is an erratic, bouncy melody. I thought it'd be interesting to try and quantify this by looking at the tracks audio features as categorised in the Spotify API - specifcally Danceability, Energy, Tempo, and Valence.
+
+The full documentation about how Spotify calculates and distributes the metrics can be found [here](https://developer.spotify.com/documentation/web-api/reference/tracks/get-audio-features/).
+
+The code below makes the API call and wrangles the resulting data to get it into tidy format for visualising with `ggplot2`
+```{r cars}
+## Undertale
+undertale <- get_artist_audio_features('toby fox')
+undertale <- undertale %>% 
+  filter(track_name == "Sans." | track_name == "Nyeh Heh Heh!") %>% 
+  dplyr::select(danceability, energy, valence, tempo, track_name)
+
+wrangled_underltale <- undertale %>% 
+  gather(danceability, energy, valence, tempo, key = "metric", value = "rating")
+
+wrangled_underltale %>% 
+  ggplot(aes(track_name, rating, fill = track_name )) +
+  geom_col()+
+  facet_wrap(~metric, scales = "free")+
+  scale_fill_manual(values = c("#E75637", "#4E81B9"),
+                    guide = "none") +
+  theme_minimal() +
+  ggplot2::labs(title = "Audio Features for Sans and Papyrus' Themes in Undertale",
+                x = "Theme Track", 
+                y = "Rating",
+                caption = "Data from the Spotify API, calling Toby Fox's Undertale Soundtrack album - LonelyManOfData") +
+  ggplot2::theme_minimal() +
+  ggplot2::theme(legend.position = "none",
+                 axis.title.y = ggplot2::element_text(size = 13, angle = 0, vjust = 0.5),
+                 axis.title.x = ggplot2::element_text(size = 13),
+                 axis.text.y = ggplot2::element_text(size = 10),
+                 axis.text.x = ggplot2::element_text(size = 10),
+                 plot.background = element_rect(colour = "#FAFAFA", fill = "#FAFAFA"),
+                 panel.background = element_rect(colour = "#FAFAFA", fill = "#FAFAFA"),
+                 text = element_text(family="Arial", face="bold", size=12))
+```
+
+Both Tempo and Valence support my idea with Papyrus' track being a much higher tempo and conveying greater positivity. The interesting outlier is Energy, which is singlificantly greater for Sans. Looking at the documentation for how Energy is calculated, I suspect elements like "dynamic range" and "general entropy" are the reasons why given that the Sans track has multiple instrumental arrangements compared to Papyrus' and has some weird little flurries over the plodding bass that contribute to entropy more than Papyrus' constant and stable high tempo.
+
+So overall, an interesting foray into the Spotify API. I think we've learned more about audio features than about UNDERTALE. I do plan on doing some additional content about Spotify audio data as well as a large critique of UNDERTALE, but I'm not sure that'll make it's way onto this blog.
