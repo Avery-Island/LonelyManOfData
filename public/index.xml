@@ -6,20 +6,39 @@
     <description>Recent content on The Lonely Man of Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 07 Oct 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 06 Nov 2019 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>In the Aeroplane Over the Sea - 20 Years On</title>
-      <link>/posts/in-the-aeroplane/</link>
-      <pubDate>Mon, 07 Oct 2019 00:00:00 +0000</pubDate>
+      <title>Using the UNDERTALE Soundtrack to Characterise Sans and Papyrus</title>
+      <link>/posts/undertale/</link>
+      <pubDate>Wed, 06 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>/posts/in-the-aeroplane/</guid>
-      <description>“I know that she will live forever. She wont ever die — Ghost - Neutral Milk Hotel”
- To mark the twentieth anniversary of one of the most influential albums of all time, I thought I’d explore the sentiment of the crptyic and ethereal lyrics of Jeff Mangum.
-nmh_data &amp;lt;- genius_album(artist = &amp;quot;Neutral Milk Hotel&amp;quot;, album = &amp;quot;In the Aeroplane Over the Sea&amp;quot;) ## Joining, by = c(&amp;quot;track_title&amp;quot;, &amp;quot;track_n&amp;quot;, &amp;quot;track_url&amp;quot;) nmh_tidy_words &amp;lt;- nmh_data %&amp;gt;% unnest_tokens(word, lyric) Bind the sentiment</description>
+      <guid>/posts/undertale/</guid>
+      <description>Knowing that the data scientist might one day write succinct code. It fills you with determination
+ UNDERTALE has become a cult classic video game. It has been critically acclaimed for its storytelling, meta commentary, and for treading the line between comedy and empathy. For me, what pulls it all together is the soundtrack. This too has been widely praised and tracks like “Ruins” and “MEGALOVANIA” have spread to become part of wider culture - notably Kenny Omega came to the ring in AEW to “MEGALOVANIA” dressed as the character Sans.</description>
+    </item>
+    
+    <item>
+      <title>Using the UNDERTALE Soundtrack to Characterise Sans and Papyrus</title>
+      <link>/posts/undertale.knit/</link>
+      <pubDate>Wed, 06 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/undertale.knit/</guid>
+      <description>Knowing that the data scientist might one day write succinct code. It fills you with determination
+ UNDERTALE has become a cult classic video game. It has been critically acclaimed for its storytelling, meta commentary, and for treading the line between comedy and empathy. For me, what pulls it all together is the soundtrack. This too has been widely praised and tracks like &amp;ldquo;Ruins&amp;rdquo; and &amp;ldquo;MEGALOVANIA&amp;rdquo; have spread to become part of wider culture - notably Kenny Omega came to the ring in AEW to &amp;ldquo;MEGALOVANIA&amp;rdquo; dressed as the character Sans.</description>
+    </item>
+    
+    <item>
+      <title>Using the UNDERTALE Soundtrack to Characterise Sans and Papyrus</title>
+      <link>/posts/undertale.utf8/</link>
+      <pubDate>Wed, 06 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/undertale.utf8/</guid>
+      <description>Knowing that the data scientist might one day write succinct code. It fills you with determination
+ UNDERTALE has become a cult classic video game. It has been critically acclaimed for its storytelling, meta commentary, and for treading the line between comedy and empathy. For me, what pulls it all together is the soundtrack. This too has been widely praised and tracks like &amp;ldquo;Ruins&amp;rdquo; and &amp;ldquo;MEGALOVANIA&amp;rdquo; have spread to become part of wider culture - notably Kenny Omega came to the ring in AEW to &amp;ldquo;MEGALOVANIA&amp;rdquo; dressed as the character Sans.</description>
     </item>
     
     <item>
@@ -40,31 +59,6 @@ England though, didn’t help themselves. Their main tactic was to bombard Smith
       <guid>/posts/dany-names/</guid>
       <description>And now the rains weep o’er their halls with not a soul to hear— Rains of Castamere - Seemingly every musician in Westeros
  After S8E5 of Game of Thrones, someone on Reddit pondered about how many people who named their children after Daenerys Targaryen subsequently regret that decision after she turned heel and destroyed King’s Landing ina fiery rage. A very valid question. Thankfully, the R package babynames has data from the US census that might help us quantify this a bit.</description>
-    </item>
-    
-    <item>
-      <title>Dummy</title>
-      <link>/posts/dummy/</link>
-      <pubDate>Mon, 31 Dec 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/dummy/</guid>
-      <description>Nada para ver aqui!</description>
-    </item>
-    
-    <item>
-      <title>Theme Demo</title>
-      <link>/posts/theme-demo/</link>
-      <pubDate>Sun, 08 Jan 2017 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/theme-demo/</guid>
-      <description>Style Demo h1 Heading h2 Heading h3 Heading h4 Heading h5 Heading h6 Heading This is bold text
-This is bold text
-This is italic text
-This is italic text
-Deleted text
-This is text with inline math $\sum_{n=1}^{\infty} 2^{-n} = 1$ and with math blocks:
-$$ \sum_{n=1}^{\infty} 2^{-n} = 1 $$
-   Heading Another heading     text text   text text   text text     Block quotes are written like so.</description>
     </item>
     
     <item>
