@@ -1,0 +1,128 @@
+---
+title: "Analysing General Election Voter Turnout"
+#author: "Mike Tapp, Head of Data Science <michael.tapp@sharecreative.com>"
+date: "2019-11-22"
+series:
+- Lonely Snippets
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(hansard)
+library(tidyverse)
+
+```
+
+Another year, another election in the UK and this one is set to be a doozie. So much so, we've already seen a marked spike in voter registrations leading the BBC to publish [this article](https://www.bbc.co.uk/news/election-2019-50393317) about the influence on non-voters. This naturally leads to the question about how voter turnout has impacted previous elections so we can try and undertsand what the impact might be of an increased turnout in this one.
+
+As it happens, UK Parliament releases all election data through their API and there is a great wrapper package `hansard` we can use to scrape the data the data from the 2015 and 2017 General Elections and try and conduct an analysis that can help us understand the impact of voter turnout. Let's check out the data available...
+
+```{r data pull, message=FALSE}
+
+library(hansard)
+library(tidyverse)
+
+#2015 election
+election15 <- election_results(ID = 382386)
+# 2017 election
+election17 <- election_results(ID = 730039)
+
+election_master <- rbind(election15, election17)
+election_master <- election_master %>% 
+  mutate(turnout_pct = turnout / electorate) %>% 
+  separate(result_of_election, c("result_of_election", "swing"), sep = " ")
+knitr::kable(head(election_master))
+```
+
+Annoyingly, we don't have the votes per candidate. Only the majority size. But we have been able to use the original `result_of_election` to seperate out whether the constituency was a hold or a gain and been able to calculate the percentage turnout. That should be enough to try and examine the imapct of voter turnout between elections and whether there's a difference on the held v gained seats. First, let's compare elections. (Note, I usually include the code for the charts but in this case, it's the same simple structure as past post charts but with a lengthy `scale_fill_manual` call to define the party brand colours so I haven't included for readabilties sake. Feel free to get in touch if you'd like to review the code though).  
+
+
+```{r prop plot, echo=FALSE}
+election_master %>% 
+  ggplot(aes(electorate, turnout_pct)) +
+  geom_point(aes(fill = result_of_election, size = majority), shape =21, alpha = 0.7) +
+  facet_wrap(~election_label_value) +
+  theme_minimal() +
+  scale_x_continuous(labels = scales::comma) +
+  scale_y_continuous() +
+  
+  scale_fill_manual(
+    "winning party",
+    values = c(
+      Con = "#0087DC",
+      DUP = "#D46A4C",
+      Green = "#528D6B",
+      Ind = "#DDDDDD",
+      Lab = "#DC241f",
+      LD = "#FAA61A",
+      PC = "#008142",
+      SDLP = "#3A9E84",
+      SF = "#326760",
+      SNP = "#FDF38E",
+      Spk = "white",
+      UKIP = "#70147A",
+      UUP = "#48A5EE")  
+  ) +
+  labs(
+    title = "Voter Turnout x Election",
+    x = "Electorate Size",
+    y = "Prop Voter Turnout",
+    caption = "Data from the UK Parliament API via the `hansard` package - LonelyManOfData"
+  ) +
+  theme(axis.title.y = element_text(size = 13),
+        axis.title.x = element_text(size = 13),
+        axis.text.y = element_text(size = 10),
+        axis.text.x = element_text(size = 10),
+        plot.background = element_rect(colour = "#FAFAFA", fill = "#FAFAFA"),
+        panel.background = element_rect(colour = "#FAFAFA", fill = "#FAFAFA"),
+        text = element_text(family="Arial", face="bold", size=12))
+```
+
+There's a few things that standout here. Firstly, the proportional turnout in general is higher in the 2017 election, however there are some constituencies in 2015 with a fantastic voter turnout rate. These are all SNP wins, suggesting a call to arms around the Scottish Indyref. The second is that Conservative won seats tend to have a higher turnout rate than labour seats across the board. We can combine the years and check to see if there is any trend in held and gained seats that might explain this.  
+
+```{r swing plot, echo=FALSE}
+election_master %>% 
+  ggplot(aes(electorate, turnout_pct)) +
+  geom_point(aes(fill = result_of_election, size = majority), shape =21, alpha = 0.7) +
+  facet_wrap(~swing) +
+  theme_minimal() +
+  scale_x_continuous(labels = scales::comma) +
+  scale_y_continuous() +
+  
+  scale_fill_manual(
+    "winning party",
+    values = c(
+      Con = "#0087DC",
+      DUP = "#D46A4C",
+      Green = "#528D6B",
+      Ind = "#DDDDDD",
+      Lab = "#DC241f",
+      LD = "#FAA61A",
+      PC = "#008142",
+      SDLP = "#3A9E84",
+      SF = "#326760",
+      SNP = "#FDF38E",
+      Spk = "white",
+      UKIP = "#70147A",
+      UUP = "#48A5EE")  
+  ) +
+  labs(
+    title = "Voter Turnout x Seat Swing",
+    x = "Electorate Size",
+    y = "Proportional Voter Turnout",
+    caption = "Data from the UK Parliament API via the `hansard` package - LonelyManOfData"
+  ) +
+  theme(axis.title.y = element_text(size = 13),
+        axis.title.x = element_text(size = 13),
+        axis.text.y = element_text(size = 10),
+        axis.text.x = element_text(size = 10),
+        plot.background = element_rect(colour = "#FAFAFA", fill = "#FAFAFA"),
+        panel.background = element_rect(colour = "#FAFAFA", fill = "#FAFAFA"),
+        text = element_text(family="Arial", face="bold", size=12))
+```
+
+Again, a few things to digest here. First, the gained seats facet further supports the SNP rallying call the previous chart shows as well as highlighting the 2017 DUP seat gains more clearly. This could lead to the conclusion that the rallying of a party around a clear cause can have a big impact on voter turnout and subsequently, the result of the election in those constituencies.
+
+Secondly, we see the same trend at an overall level that typically held Conservative seats see a greater voter turnout rate than Labour ones. The general consensus in the [SHARE office](https://sharecreative.com/) was that this could highlight a difference in party voter base; with older people more likely to turnout and to vote right wing. 
+
+What does this tell us overall? People come out to vote when there is a clear cause to support and I'd say Brexit is a cause that people tend to be _fairly_ passionate about. This can certainly help explain why we've seen a surge in voter registrations. What that surge may mean in terms of election result is less clear. Given the Brexit party aren't running in Conservative strongholds, you'd expect the turnout proportion in those constituencies to remain largely the same the labour constituencies to perhaps see is a higher turnout by virtue of clear oppostion and a clearer cause themselves. It's going to be an interesting election season for the pollsters, that's for sure.

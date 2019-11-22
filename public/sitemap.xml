@@ -3,112 +3,127 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/series/lonely-snippets/</loc>
+    <loc>https://lonelymanofdata.netlify.com/posts/voter_turnout/</loc>
+    <lastmod>2019-11-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lonelymanofdata.netlify.com/sandbox/untitled/</loc>
+    <lastmod>2019-11-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lonelymanofdata.netlify.com/series/lonely-snippets/</loc>
+    <lastmod>2019-11-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lonelymanofdata.netlify.com/posts/</loc>
+    <lastmod>2019-11-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lonelymanofdata.netlify.com/sandbox/</loc>
+    <lastmod>2019-11-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lonelymanofdata.netlify.com/series/</loc>
+    <lastmod>2019-11-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lonelymanofdata.netlify.com/</loc>
+    <lastmod>2019-11-22T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://lonelymanofdata.netlify.com/posts/undertale/</loc>
     <lastmod>2019-11-06T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/posts/</loc>
-    <lastmod>2019-11-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/series/</loc>
-    <lastmod>2019-11-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/</loc>
-    <lastmod>2019-11-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/undertale/</loc>
-    <lastmod>2019-11-06T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/getting-steve-smith-out/</loc>
+    <loc>https://lonelymanofdata.netlify.com/posts/getting-steve-smith-out/</loc>
     <lastmod>2019-09-10T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/posts/dany-names/</loc>
+    <loc>https://lonelymanofdata.netlify.com/posts/dany-names/</loc>
     <lastmod>2019-05-13T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>https://lonelymanofdata.netlify.com/categories/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/2015-07-23-r-rmarkdown/</loc>
+    <loc>https://lonelymanofdata.netlify.com/post/2015-07-23-r-rmarkdown/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/plot/</loc>
+    <loc>https://lonelymanofdata.netlify.com/tags/plot/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/</loc>
+    <loc>https://lonelymanofdata.netlify.com/post/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/r/</loc>
+    <loc>https://lonelymanofdata.netlify.com/categories/r/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/r-markdown/</loc>
+    <loc>https://lonelymanofdata.netlify.com/tags/r-markdown/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/regression/</loc>
+    <loc>https://lonelymanofdata.netlify.com/tags/regression/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>https://lonelymanofdata.netlify.com/tags/</loc>
     <lastmod>2015-07-23T21:13:14-05:00</lastmod>
   </url>
   
   <url>
-    <loc>/about.pt-br/</loc>
+    <loc>https://lonelymanofdata.netlify.com/about.pt-br/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/contact/</loc>
+    <loc>https://lonelymanofdata.netlify.com/contact/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/about/</loc>
+    <loc>https://lonelymanofdata.netlify.com/about/</loc>
   </url>
   
   <url>
-    <loc>/about/</loc>
+    <loc>https://lonelymanofdata.netlify.com/about/</loc>
   </url>
   
   <url>
-    <loc>/contact/</loc>
+    <loc>https://lonelymanofdata.netlify.com/contact/</loc>
   </url>
   
   <url>
-    <loc>/contact/</loc>
+    <loc>https://lonelymanofdata.netlify.com/contact/</loc>
   </url>
   
   <url>
-    <loc>/projects/</loc>
+    <loc>https://lonelymanofdata.netlify.com/projects/</loc>
   </url>
   
   <url>
-    <loc>/projects/</loc>
+    <loc>https://lonelymanofdata.netlify.com/projects/</loc>
   </url>
   
 </urlset>

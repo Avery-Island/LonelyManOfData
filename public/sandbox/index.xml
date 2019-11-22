@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sandboxes on The Lonely Man of Data</title>
+    <link>https://lonelymanofdata.netlify.com/sandbox/</link>
+    <description>Recent content in Sandboxes on The Lonely Man of Data</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 22 Nov 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://lonelymanofdata.netlify.com/sandbox/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Analysing General Election Voter Turnout</title>
+      <link>https://lonelymanofdata.netlify.com/sandbox/untitled/</link>
+      <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://lonelymanofdata.netlify.com/sandbox/untitled/</guid>
+      <description>Another year, another election in the UK and this one is set to be a doozie. So much so, we’ve already seen a marked spike in voter registrations leading the BBC to publish this article about the influence on non-voters. This naturally leads to the question about how voter turnout has impacted previous elections so we can try and undertsand what the impact might be of an increased turnout in this one.</description>
+    </item>
+    
+  </channel>
+</rss>

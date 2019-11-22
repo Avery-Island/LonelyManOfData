@@ -2,51 +2,69 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>The Lonely Man of Data</title>
-    <link>/</link>
+    <link>https://lonelymanofdata.netlify.com/</link>
     <description>Recent content on The Lonely Man of Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 06 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 22 Nov 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://lonelymanofdata.netlify.com/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Analysing General Election Voter Turnout</title>
+      <link>https://lonelymanofdata.netlify.com/posts/voter_turnout/</link>
+      <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://lonelymanofdata.netlify.com/posts/voter_turnout/</guid>
+      <description>Another year, another election in the UK and this one is set to be a doozie. So much so, we’ve already seen a marked spike in voter registrations leading the BBC to publish this article about the influence of non-voters. This naturally leads to the question about how voter turnout has impacted previous elections so we can try and undertsand what the impact might be of an increased turnout in this one.</description>
+    </item>
+    
+    <item>
+      <title>Analysing General Election Voter Turnout</title>
+      <link>https://lonelymanofdata.netlify.com/sandbox/untitled/</link>
+      <pubDate>Fri, 22 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://lonelymanofdata.netlify.com/sandbox/untitled/</guid>
+      <description>Another year, another election in the UK and this one is set to be a doozie. So much so, we’ve already seen a marked spike in voter registrations leading the BBC to publish this article about the influence on non-voters. This naturally leads to the question about how voter turnout has impacted previous elections so we can try and undertsand what the impact might be of an increased turnout in this one.</description>
+    </item>
+    
+    <item>
       <title>Using the UNDERTALE Soundtrack to Characterise Sans and Papyrus</title>
-      <link>/posts/undertale/</link>
+      <link>https://lonelymanofdata.netlify.com/posts/undertale/</link>
       <pubDate>Wed, 06 Nov 2019 00:00:00 +0000</pubDate>
       
-      <guid>/posts/undertale/</guid>
+      <guid>https://lonelymanofdata.netlify.com/posts/undertale/</guid>
       <description>Knowing that the data scientist might one day write succinct code. It fills you with determination
  UNDERTALE has become a cult classic video game. It has been critically acclaimed for its storytelling, meta commentary, and for treading the line between comedy and empathy. For me, what pulls it all together is the soundtrack. This too has been widely praised and tracks like “Ruins” and “MEGALOVANIA” have spread to become part of wider culture - notably Kenny Omega came to the ring in AEW to “MEGALOVANIA” dressed as the character Sans.</description>
     </item>
     
     <item>
       <title>How do you Get Steve Smith out?</title>
-      <link>/posts/getting-steve-smith-out/</link>
+      <link>https://lonelymanofdata.netlify.com/posts/getting-steve-smith-out/</link>
       <pubDate>Tue, 10 Sep 2019 00:00:00 +0000</pubDate>
       
-      <guid>/posts/getting-steve-smith-out/</guid>
+      <guid>https://lonelymanofdata.netlify.com/posts/getting-steve-smith-out/</guid>
       <description>Steve Smith was a thorn in England’s side over the summer in the Ashes series and, regardless of his past transgressions, has surely cemented his legacy as one of the finest test batsmen of all time.
 England though, didn’t help themselves. Their main tactic was to bombard Smith with bouncers to create a hostile batting condition. Smith was so disciplined however, seldom taking the bait and leaving anything high and wide.</description>
     </item>
     
     <item>
       <title>How Many People Regret Naming Their Child After Daenerys Targaryen?</title>
-      <link>/posts/dany-names/</link>
+      <link>https://lonelymanofdata.netlify.com/posts/dany-names/</link>
       <pubDate>Mon, 13 May 2019 00:00:00 +0000</pubDate>
       
-      <guid>/posts/dany-names/</guid>
+      <guid>https://lonelymanofdata.netlify.com/posts/dany-names/</guid>
       <description>And now the rains weep o’er their halls with not a soul to hear— Rains of Castamere - Seemingly every musician in Westeros
  After S8E5 of Game of Thrones, someone on Reddit pondered about how many people who named their children after Daenerys Targaryen subsequently regret that decision after she turned heel and destroyed King’s Landing ina fiery rage. A very valid question. Thankfully, the R package babynames has data from the US census that might help us quantify this a bit.</description>
     </item>
     
     <item>
       <title>Hello R Markdown</title>
-      <link>/post/2015-07-23-r-rmarkdown/</link>
+      <link>https://lonelymanofdata.netlify.com/post/2015-07-23-r-rmarkdown/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
       
-      <guid>/post/2015-07-23-r-rmarkdown/</guid>
+      <guid>https://lonelymanofdata.netlify.com/post/2015-07-23-r-rmarkdown/</guid>
       <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
 You can embed an R code chunk like this:
 summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 26.00 ## Median :15.0 Median : 36.00 ## Mean :15.4 Mean : 42.98 ## 3rd Qu.</description>
@@ -54,74 +72,74 @@ summary(cars) ## speed dist ## Min. : 4.0 Min. : 2.00 ## 1st Qu.:12.0 1st Qu.: 2
     
     <item>
       <title></title>
-      <link>/about.pt-br/</link>
+      <link>https://lonelymanofdata.netlify.com/about.pt-br/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/about.pt-br/</guid>
+      <guid>https://lonelymanofdata.netlify.com/about.pt-br/</guid>
       <description>About Mike       code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs) { hljs.configure({languages: []}); hljs.initHighlightingOnLoad(); if (document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) { window.setTimeout(function() { hljs.initHighlighting(); }, 0); } }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .</description>
     </item>
     
     <item>
       <title></title>
-      <link>/contact/</link>
+      <link>https://lonelymanofdata.netlify.com/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/contact/</guid>
+      <guid>https://lonelymanofdata.netlify.com/contact/</guid>
       <description>Contact       code{white-space: pre;} pre:not([class]) { background-color: white; }  if (window.hljs) { hljs.configure({languages: []}); hljs.initHighlightingOnLoad(); if (document.readyState &amp;&amp; document.readyState === &#34;complete&#34;) { window.setTimeout(function() { hljs.initHighlighting(); }, 0); } }  h1 { font-size: 34px; } h1.title { font-size: 38px; } h2 { font-size: 30px; } h3 { font-size: 24px; } h4 { font-size: 18px; } h5 { font-size: 16px; } h6 { font-size: 12px; } .</description>
     </item>
     
     <item>
       <title>About Mike</title>
-      <link>/about/</link>
+      <link>https://lonelymanofdata.netlify.com/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/about/</guid>
+      <guid>https://lonelymanofdata.netlify.com/about/</guid>
       <description>Mike Tapp is a Data Scientist commited to changing the way people think about data - starting with two other passions - music and cricket. He was inducted into the BIMA100 class of 2019, recongising the most influential people in British Tech and Media for the work done whilst Head of Data Science at SHARE.
 He also does talks about the state and evolution of the Data Science discipline and the R programming language.</description>
     </item>
     
     <item>
       <title>About Mike</title>
-      <link>/about/</link>
+      <link>https://lonelymanofdata.netlify.com/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/about/</guid>
+      <guid>https://lonelymanofdata.netlify.com/about/</guid>
       <description>Mike Tapp is a Data Scientist commited to changing the way people think about data - starting with two other passions - music and cricket. He was inducted into the BIMA100 class of 2019, recongising the most influential people in British Tech and Media for the work done whilst Head of Data Science at SHARE.</description>
     </item>
     
     <item>
       <title>Contact</title>
-      <link>/contact/</link>
+      <link>https://lonelymanofdata.netlify.com/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/contact/</guid>
+      <guid>https://lonelymanofdata.netlify.com/contact/</guid>
       <description>Feel free to slide into my LinkedIn DMs</description>
     </item>
     
     <item>
       <title>Contact</title>
-      <link>/contact/</link>
+      <link>https://lonelymanofdata.netlify.com/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/contact/</guid>
+      <guid>https://lonelymanofdata.netlify.com/contact/</guid>
       <description>Feel free to slide into my LinkedIn DMs</description>
     </item>
     
     <item>
       <title>Projects</title>
-      <link>/projects/</link>
+      <link>https://lonelymanofdata.netlify.com/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/projects/</guid>
+      <guid>https://lonelymanofdata.netlify.com/projects/</guid>
       <description>Just a placeholder - will put some SHARE work here when it&amp;rsquo;s released to the public domain</description>
     </item>
     
     <item>
       <title>Projects</title>
-      <link>/projects/</link>
+      <link>https://lonelymanofdata.netlify.com/projects/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>/projects/</guid>
+      <guid>https://lonelymanofdata.netlify.com/projects/</guid>
       <description>Just a placeholder - will put some SHARE work here when it&amp;rsquo;s released to the public domain</description>
     </item>
     

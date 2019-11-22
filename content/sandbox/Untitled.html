@@ -1,0 +1,130 @@
+---
+title: "Analysing General Election Voter Turnout"
+#author: "Mike Tapp, Head of Data Science <michael.tapp@sharecreative.com>"
+date: "2019-11-22"
+series:
+- Lonely Snippets
+output: html_document
+---
+
+
+
+<p>Another year, another election in the UK and this one is set to be a doozie. So much so, we’ve already seen a marked spike in voter registrations leading the BBC to publish <a href="https://www.bbc.co.uk/news/election-2019-50393317">this article</a> about the influence on non-voters. This naturally leads to the question about how voter turnout has impacted previous elections so we can try and undertsand what the impact might be of an increased turnout in this one.</p>
+<p>As it happens, UK Parliament releases all election data through their API and there is a great wrapper package <code>hansard</code> we can use to scrape the data the data from the 2015 and 2017 General Elections and try and conduct an analysis that can help us understand the impact of voter turnout. Let’s check out the data available…</p>
+<pre class="r"><code>library(hansard)
+library(tidyverse)
+
+#2015 election
+election15 &lt;- election_results(ID = 382386)
+# 2017 election
+election17 &lt;- election_results(ID = 730039)
+
+election_master &lt;- rbind(election15, election17)
+election_master &lt;- election_master %&gt;% 
+  mutate(turnout_pct = turnout / electorate) %&gt;% 
+  separate(result_of_election, c(&quot;result_of_election&quot;, &quot;swing&quot;), sep = &quot; &quot;)
+knitr::kable(head(election_master))</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">about</th>
+<th align="right">electorate</th>
+<th align="right">majority</th>
+<th align="left">result_of_election</th>
+<th align="left">swing</th>
+<th align="right">turnout</th>
+<th align="left">constituency_about</th>
+<th align="left">constituency_label_value</th>
+<th align="left">election_about</th>
+<th align="left">election_label_value</th>
+<th align="right">turnout_pct</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">383000</td>
+<td align="right">71485</td>
+<td align="right">16890</td>
+<td align="left">Con</td>
+<td align="left">Hold</td>
+<td align="right">47257</td>
+<td align="left">146989</td>
+<td align="left">Hereford and South Herefordshire</td>
+<td align="left">382386</td>
+<td align="left">2015 General Election</td>
+<td align="right">0.6610758</td>
+</tr>
+<tr class="even">
+<td align="left">383130</td>
+<td align="right">73181</td>
+<td align="right">10709</td>
+<td align="left">Con</td>
+<td align="left">Hold</td>
+<td align="right">50010</td>
+<td align="left">147053</td>
+<td align="left">Maidstone and The Weald</td>
+<td align="left">382386</td>
+<td align="left">2015 General Election</td>
+<td align="right">0.6833741</td>
+</tr>
+<tr class="odd">
+<td align="left">383181</td>
+<td align="right">48690</td>
+<td align="right">5325</td>
+<td align="left">Con</td>
+<td align="left">Hold</td>
+<td align="right">33757</td>
+<td align="left">147077</td>
+<td align="left">Montgomeryshire</td>
+<td align="left">382386</td>
+<td align="left">2015 General Election</td>
+<td align="right">0.6933046</td>
+</tr>
+<tr class="even">
+<td align="left">383413</td>
+<td align="right">76645</td>
+<td align="right">20761</td>
+<td align="left">Con</td>
+<td align="left">Hold</td>
+<td align="right">54559</td>
+<td align="left">147191</td>
+<td align="left">Skipton and Ripon</td>
+<td align="left">382386</td>
+<td align="left">2015 General Election</td>
+<td align="right">0.7118403</td>
+</tr>
+<tr class="odd">
+<td align="left">383460</td>
+<td align="right">79285</td>
+<td align="right">17813</td>
+<td align="left">Con</td>
+<td align="left">Hold</td>
+<td align="right">51304</td>
+<td align="left">147214</td>
+<td align="left">South West Bedfordshire</td>
+<td align="left">382386</td>
+<td align="left">2015 General Election</td>
+<td align="right">0.6470833</td>
+</tr>
+<tr class="even">
+<td align="left">382769</td>
+<td align="right">74485</td>
+<td align="right">93</td>
+<td align="left">Lab</td>
+<td align="left">Gain</td>
+<td align="right">51161</td>
+<td align="left">146876</td>
+<td align="left">City of Chester</td>
+<td align="left">382386</td>
+<td align="left">2015 General Election</td>
+<td align="right">0.6868631</td>
+</tr>
+</tbody>
+</table>
+<p>Annoyingly, we don’t have the votes per candidate. Only the majority size. But we have been able to use the original <code>result_of_election</code> to seperate out whether the constituency was a hold or a gain and been able to calculate the percentage turnout. That should be enough to try and examine the imapct of voter turnout between elections and whether there’s a difference on the held v gained seats. First, let’s compare elections. (Note, I usually include the code for the charts but in this case, it’s the same simple structure as past post charts but with a lengthy <code>scale_fill_manual</code> call to define the party brand colours so I haven’t included for readabilties sake. Feel free to get in touch if you’d like to review the code though).</p>
+<p><img src="/sandbox/Untitled_files/figure-html/prop%20plot-1.png" width="672" /></p>
+<p>There’s a few things that standout here. Firstly, the proportional turnout in general is higher in the 2017 election, however there are some constituencies in 2015 with a fantastic voter turnout rate. These are all SNP wins, suggesting a call to arms around the Scottish Indyref. The second is that Conservative won seats tend to have a higher turnout rate than labour seats across the board. We can combine the years and check to see if there is any trend in held and gained seats that might explain this.</p>
+<p><img src="/sandbox/Untitled_files/figure-html/swing%20plot-1.png" width="672" /></p>
+<p>Again, a few things to digest here. First, the gained seats facet further supports the SNP rallying call the previous chart shows as well as highlighting the 2017 DUP seat gains more clearly. This could lead to the conclusion that the rallying of a party around a clear cause can have a big impact on voter turnout and subsequently, the result of the election in those constituencies.</p>
+<p>Secondly, we see the same trend at an overall level that typically held Conservative seats see a greater voter turnout rate than Labour ones. The general consensus in the <a href="https://sharecreative.com/">SHARE office</a> was that this could highlight a difference in party voter base; with older people more likely to turnout and to vote right wing.</p>
+<p>What does this tell us overall? People come out to vote when there is a clear cause to support and I’d say Brexit is a cause that people tend to be <em>fairly</em> passionate about. This can certainly help explain why we’ve seen a surge in voter registrations. What that surge may mean in terms of election result is less clear. Given the Brexit party aren’t running in Conservative strongholds, you’d expect the turnout proportion in those constituencies to remain largely the same the labour constituencies to perhaps see is a higher turnout by virtue of clear oppostion and a clearer cause themselves. It’s going to be an interesting election season for the pollsters, that’s for sure.</p>
