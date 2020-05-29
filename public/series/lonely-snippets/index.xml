@@ -6,10 +6,20 @@
     <description>Recent content in Lonely Snippets on The Lonely Man of Data</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 22 Nov 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 29 May 2020 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://lonelymanofdata.netlify.com/series/lonely-snippets/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Exploring Villager Music Taste in Animal Crossing New Horizons</title>
+      <link>https://lonelymanofdata.netlify.com/posts/kk_post/</link>
+      <pubDate>Fri, 29 May 2020 00:00:00 +0000</pubDate>
+      
+      <guid>https://lonelymanofdata.netlify.com/posts/kk_post/</guid>
+      <description>The world is a grim place right now. But there has been one beacon of shinning light in the darkness. That’s right - Animal Crossing: New Horizons. The game has developed into a phenomenon with it’s chill and charming atmosphere providing light relief and escapism in the form of hefty loan repayments to an anthropomorphic racoon.
+Part of the game’s charm stems from it’s soundtrack and given my own growing suite of work analysing music in video games - it made sense to dig a little deeper into the music of the Animal Crossing world.</description>
+    </item>
     
     <item>
       <title>Analysing General Election Voter Turnout</title>
