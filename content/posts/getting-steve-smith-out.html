@@ -7,6 +7,7 @@ series:
 output: html_document
 ---
 
+<script src="/rmarkdown-libs/header-attrs/header-attrs.js"></script>
 
 
 <p>Steve Smith was a thorn in England’s side over the summer in the Ashes series and, regardless of his past transgressions, has surely cemented his legacy as one of the finest test batsmen of all time.</p>
@@ -16,7 +17,7 @@ output: html_document
 table(smith$Dismissal)</code></pre>
 <pre><code>## 
 ##       -  bowled  caught     lbw not out run out stumped 
-##       5      20      57      16      16       3       4</code></pre>
+##       6      21      63      16      16       3       4</code></pre>
 <pre class="r"><code>smith %&gt;% 
   filter(Dismissal != &quot;-&quot;) %&gt;% 
   ggplot(aes(Dismissal, as.numeric(Runs))) +
